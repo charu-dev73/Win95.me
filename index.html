@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetroOS 95</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Window Toggles -->
+  <input type="checkbox" id="toggle-about" class="win-toggle" checked>
+  <input type="checkbox" id="toggle-projects" class="win-toggle">
+  <input type="checkbox" id="toggle-music" class="win-toggle">
+  <input type="checkbox" id="toggle-trash" class="win-toggle">
+  <input type="checkbox" id="toggle-about-proj" class="win-toggle">
+  <input type="checkbox" id="toggle-start" class="win-toggle">
+
+  <!-- Desktop Icons -->
+  <div class="desktop">
+    <label class="icon" for="toggle-about">
+      <img class="icon-img" src="aboutmefile.png" alt="About Me">
+      <span class="icon-label">About_Me.txt</span>
+    </label>
+
+    <label class="icon" for="toggle-projects">
+      <img class="icon-img" src="notepadgj.png" alt="Projects">
+      <span class="icon-label">My_Projects</span>
+    </label>
+
+    <label class="icon" for="toggle-music">
+      <img class="icon-img" src="musicplayer1.png" alt="Music Player">
+      <span class="icon-label">Music_Player.exe</span>
+    </label>
+
+    <label class="icon" for="toggle-trash">
+      <img class="icon-img" src="trash.png" alt="Trash">
+      <span class="icon-label">Trash</span>
+    </label>
+  </div>
+
+  <!-- About Window -->
+  <div class="window win-about">
+    <div class="titlebar">
+      <span class="titlebar-title">
+        <img class="titlebar-icon" src="aboutmefile.png" alt="">
+        About_Me.txt - Notepad
+      </span>
+      <span class="titlebar-btns">
+        <span class="tbtn">_</span>
+        <span class="tbtn">□</span>
+        <label class="tbtn close-btn" for="toggle-about">×</label>
+      </span>
+    </div>
+
+    <div class="menubar">
+      <div class="menu-item" tabindex="0">
+        <span>File</span>
+        <div class="dropdown-menu bevel-out">
+          <div class="menu-option">New</div>
+          <div class="menu-option">Open...</div>
+          <div class="menu-option">Save</div>
+          <div class="menu-divider"></div>
+          <label class="menu-option" for="toggle-about">Exit</label>
+        </div>
+      </div>
+      <div class="menu-item" tabindex="0">
+        <span>Edit</span>
+        <div class="dropdown-menu bevel-out">
+          <div class="menu-option">Undo</div>
+          <div class="menu-divider"></div>
+          <div class="menu-option">Cut</div>
+          <div class="menu-option">Copy</div>
+          <div class="menu-option">Paste</div>
+        </div>
+      </div>
+      <div class="menu-item" tabindex="0">
+        <span>Search</span>
+        <div class="dropdown-menu bevel-out">
+          <div class="menu-option">Find...</div>
+          <div class="menu-option">Find Next</div>
+        </div>
+      </div>
+      <div class="menu-item" tabindex="0">
+        <span>Help</span>
+        <div class="dropdown-menu bevel-out">
+          <div class="menu-option">Help Topics</div>
+          <div class="menu-divider"></div>
+          <div class="menu-option">About Notepad</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="win-body">
+      <div class="notepad-area">
+        hey! welcome to my practice front-end project 👾<br><br>
+        just testing out my HTML & CSS skills and trying to recreate a nostalgic retro win95 layout.<br><br>
+        no frameworks, no javascript — just raw CSS wizardry, checkboxes for popups, and old school pixel vibes.<br><br>
+        <span class="cursor-blink"></span> 
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects Window -->
+  <div class="window win-projects">
+    <div class="titlebar">
+      <span class="titlebar-title">
+        <img class="titlebar-icon" src="notepadgj.png" alt="">
+        My_Projects
+      </span>
+      <span class="titlebar-btns">
+        <span class="tbtn">_</span>
+        <span class="tbtn">□</span>
+        <label class="tbtn close-btn" for="toggle-projects">×</label>
+      </span>
+    </div>
+
+    <div class="menubar">
+      <div class="menu-item" tabindex="0">
+        <span>File</span>
+        <div class="dropdown-menu bevel-out">
+          <div class="menu-option">New Folder</div>
+          <div class="menu-divider"></div>
+          <label class="menu-option" for="toggle-projects">Close</label>
+        </div>
+      </div>
+      <div class="menu-item" tabindex="0">
+        <span>View</span>
+        <div class="dropdown-menu bevel-out">
+          <div class="menu-option">Large Icons</div>
+          <div class="menu-option">Small Icons</div>
+          <div class="menu-option">List</div>
+          <div class="menu-divider"></div>
+          <div class="menu-option">Refresh</div>
+        </div>
+      </div>
+      <div class="menu-item" tabindex="0">
+        <span>Help</span>
+        <div class="dropdown-menu bevel-out">
+          <div class="menu-option">Help Topics</div>
+          <div class="menu-divider"></div>
+          <label class="menu-option" for="toggle-about-proj">About Projects</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="win-body">
+      <div class="project-grid">
+        <div class="project-card bevel-in">
+          <img class="proj-pixel-icon" src="notepadgj.png" alt="">
+          <h4>404cat</h4>
+          <p>Fun HTML practice project featuring custom 404 cat layouts.</p>
+          <div class="proj-tags"><span class="proj-tag">HTML</span></div>
+        </div>
+
+        <div class="project-card bevel-in">
+          <img class="proj-pixel-icon" src="notepadgj.png" alt="">
+          <h4>olympus-archive</h4>
+          <p>Structured archive website built using pure HTML structure.</p>
+          <div class="proj-tags"><span class="proj-tag">HTML</span></div>
+        </div>
+
+        <div class="project-card bevel-in">
+          <img class="proj-pixel-icon" src="notepadgj.png" alt="">
+          <h4>expense-tracker</h4>
+          <p>Simple Expense Student Web Tracker ui layout.</p>
+          <div class="proj-tags"><span class="proj-tag">CSS</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Music Window -->
+  <div class="window win-music">
+    <div class="titlebar">
+      <span class="titlebar-title">
+        <img class="titlebar-icon" src="musicplayer1.png" alt="">
+        Music_Player.exe
+      </span>
+      <span class="titlebar-btns">
+        <span class="tbtn">_</span>
+        <label class="tbtn close-btn" for="toggle-music">×</label>
+      </span>
+    </div>
+
+    <div class="win-body music-body">
+      <div class="player-screen bevel-in">
+        Now Playing:<br>
+        <strong>retro_chiptune_loop.mp3</strong>
+        <div class="eq">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="audio-container bevel-out">
+        <audio controls loop class="retro-audio">
+          <source src="music.mp3" type="audio/mpeg">
+          <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73183.mp3?filename=chiptune-groove-110257.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recycle Bin Window -->
+  <div class="window win-trash">
+    <div class="titlebar">
+      <span class="titlebar-title">
+        <img class="titlebar-icon" src="trash.png" alt="">
+        Recycle Bin
+      </span>
+      <span class="titlebar-btns">
+        <label class="tbtn close-btn" for="toggle-trash">×</label>
+      </span>
+    </div>
+    <div class="win-body trash-body">
+      <p style="font-size: 15px; font-weight: bold; margin-bottom: 8px;">The Recycle Bin is empty.</p>
+      <p style="color: #333;">(all my bugs get fixed, eventually)</p>
+    </div>
+  </div>
+
+  <!-- Dialog Popup -->
+  <div class="dialog-box win-about-proj bevel-out">
+    <div class="titlebar">
+      <span class="titlebar-title">About Projects</span>
+      <label class="tbtn close-btn" for="toggle-about-proj">×</label>
+    </div>
+    <div class="dialog-body">
+      <span class="dialog-icon"></span>
+      <p>A collection of front-end experiments built using raw HTML & CSS.</p>
+    </div>
+    <div class="dialog-footer">
+      <label class="dialog-btn bevel-out" for="toggle-about-proj">OK</label>
+    </div>
+  </div>
+
+  <!-- Start Menu -->
+  <div class="start-menu bevel-out">
+    <div class="start-banner">
+      <span><b>Windows</b>95</span>
+    </div>
+    <div class="start-options">
+      <label class="start-item" for="toggle-projects">
+        <span class="s-icon"></span> Projects
+      </label>
+      <label class="start-item" for="toggle-about">
+        <span class="s-icon"></span> About Me
+      </label>
+      <label class="start-item" for="toggle-music">
+        <span class="s-icon"></span> Music Player
+      </label>
+      <div class="menu-divider"></div>
+      <label class="start-item" for="toggle-trash">
+        <span class="s-icon"></span> Recycle Bin
+      </label>
+      <div class="menu-divider"></div>
+      <label class="start-item" for="toggle-start">
+        <span class="s-icon"></span> Shut Down...
+      </label>
+    </div>
+  </div>
+
+  <!-- Taskbar -->
+  <div class="taskbar bevel-out">
+    <label class="start-btn bevel-out" for="toggle-start">
+      <span class="start-flag">🪟</span> Start
+    </label>
+    <div class="task-divider"></div>
+
+    <label class="task-item task-about" for="toggle-about">
+      <img class="task-icon" src="aboutmefile.png" alt=""> About_Me.txt
+    </label>
+    <label class="task-item task-projects" for="toggle-projects">
+      <img class="task-icon" src="notepadgj.png" alt=""> My_Projects
+    </label>
+    <label class="task-item task-music" for="toggle-music">
+      <img class="task-icon" src="musicplayer1.png" alt=""> Music_Player.exe
+    </label>
+    <label class="task-item task-trash" for="toggle-trash">
+      <img class="task-icon" src="trash.png" alt=""> Recycle Bin
+    </label>
+
+    <div class="tray bevel-in">
+      <span class="tray-icon"></span>
+      <span class="tray-icon"></span>
+      <span class="tray-clock">3:47 PM</span>
+    </div>
+  </div>
+
+  <div class="crt-overlay"></div>
+
+</body>
+</html>
