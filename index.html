@@ -40,7 +40,7 @@
   </div>
 
   <!-- About Window -->
-  <div class="window win-about">
+  <div class="window win-about" tabindex="-1">
     <div class="titlebar">
       <span class="titlebar-title">
         <img class="titlebar-icon" src="aboutmefile.png" alt="">
@@ -102,7 +102,7 @@
   </div>
 
   <!-- Projects Window -->
-  <div class="window win-projects">
+  <div class="window win-projects" tabindex="-1">
     <div class="titlebar">
       <span class="titlebar-title">
         <img class="titlebar-icon" src="notepadgj.png" alt="">
@@ -171,7 +171,7 @@
   </div>
 
   <!-- Music Window -->
-  <div class="window win-music">
+  <div class="window win-music" tabindex="-1">
     <div class="titlebar">
       <span class="titlebar-title">
         <img class="titlebar-icon" src="musicplayer1.png" alt="">
@@ -193,15 +193,19 @@
       </div>
       <div class="audio-container bevel-out">
         <audio controls loop class="retro-audio">
-          <source src="music.mp3" type="audio/mpeg">
+          <!-- music.mp3 isn't in the repo, so it 404'd and blocked playback.
+               The working CDN track is now tried first; drop a real
+               music.mp3 next to index.html and swap the order back if you'd
+               rather ship your own local track. -->
           <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73183.mp3?filename=chiptune-groove-110257.mp3" type="audio/mpeg">
+          <source src="music.mp3" type="audio/mpeg">
         </audio>
       </div>
     </div>
   </div>
 
   <!-- Recycle Bin Window -->
-  <div class="window win-trash">
+  <div class="window win-trash" tabindex="-1">
     <div class="titlebar">
       <span class="titlebar-title">
         <img class="titlebar-icon" src="trash.png" alt="">

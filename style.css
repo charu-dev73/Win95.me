@@ -60,8 +60,11 @@ label {
     3px 3px 8px rgba(0, 0, 0, 0.5);
 }
 
-.window:hover {
+.window:hover,
+.window:focus,
+.window:focus-within {
   z-index: 8;
+  outline: none;
 }
 
 #toggle-about:checked ~ .win-about,
@@ -234,6 +237,8 @@ label {
 }
 
 .icon-label {
+  display: block;
+  width: 100%;
   font-size: 12px;
   text-align: center;
   color: #fff;
@@ -241,6 +246,7 @@ label {
   padding: 1px 3px;
   line-height: 1.2;
   margin-top: 2px;
+  overflow-wrap: break-word;
 }
 
 .notepad-area {
@@ -578,4 +584,63 @@ label {
 @keyframes blink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
+}
+
+/* Small screens: the desktop metaphor used fixed pixel positions and
+   widths up to 480px, so on a phone-width viewport windows like
+   .win-projects rendered mostly or entirely off-screen with no way to
+   reach them (body had overflow:hidden). This reflows every window to a
+   centered, viewport-safe size and stacks content so nothing is lost. */
+@media (max-width: 700px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .window,
+  .win-about,
+  .win-projects,
+  .win-music,
+  .win-trash {
+    top: 104px;
+    left: 50%;
+    width: calc(100vw - 24px) !important;
+    max-width: 380px;
+    transform: translateX(-50%);
+  }
+
+  /* Icons move into a row that hugs the top edge instead of a tall left
+     column, so opened windows (which start below this row) never cover
+     them and every icon stays reachable. */
+  .desktop {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: calc(100vw - 16px);
+  }
+
+  .icon {
+    width: 64px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .start-menu {
+    bottom: 34px;
+    width: 160px;
+  }
+
+  .task-item {
+    max-width: 92px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
